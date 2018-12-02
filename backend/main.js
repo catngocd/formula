@@ -7,7 +7,8 @@ const config = JSON.parse(fs.readFileSync("./config.json"));
 // const config = jquery.getJSON("./config");
 // const request = require("request");
 
-let test_file_name = "i_765_pg1.PNG";
+let i = 7;
+let test_file_name = `i_765_pg${i}.PNG`;
 
 // define parameters for post request
 let post_request_body = {
@@ -27,6 +28,7 @@ let post_request_body = {
   ]
 };
 
+console.log(`Page ${i}`);
 console.log("POST sending now");
 
 axios
@@ -66,13 +68,17 @@ axios
     }
 
     // writing the blocks to a file
-    fs.writeFile("./blocks.json", JSON.stringify(all_blocks, null, 2), err => {
-      if (err) {
-        console.error(err);
-        return;
+    fs.writeFile(
+      `./blocks${i}.json`,
+      JSON.stringify(all_blocks, null, 2),
+      err => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("File has been created");
       }
-      console.log("File has been created");
-    });
+    );
   })
   .catch(function(error) {
     console.log(error);

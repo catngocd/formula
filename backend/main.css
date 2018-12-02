@@ -1,0 +1,25 @@
+/* body {
+  text-align: center;
+  background: #f2f6f8;
+}
+.img {
+  position: absolute;
+  z-index: 1;
+}
+
+#container {
+  display: inline-block;
+  width: 1080px;
+  height: 1398px;
+  margin: 0 auto;
+  background: black;
+  position: relative;
+  border: 5px solid black;
+  border-radius: 10px;
+  box-shadow: 0 5px 50px #333;
+}
+
+#canvas {
+  position: relative;
+  z-index: 1;
+} */
