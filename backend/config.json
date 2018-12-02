@@ -1,0 +1,8 @@
+{
+  "RESULT_TOPIC": "Interpreted-fields",
+  "RESULT_BUCKET": "Interpreted-fields-bucket",
+  "TRANSLATE_TOPIC": "Translated-fields",
+  "TRANSLATE": true,
+  "TO_LANG": ["en", "es"],
+  "STORAGE_BUCKET": "formula-images-yhack2018"
+}
