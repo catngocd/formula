@@ -572,7 +572,7 @@ let img;
 
 setTimeout(function() {
   drawBoxes();
-}, 5000);
+}, 2000);
 
 function drawBoxes() {
   const canvas = document.getElementById("canvas");
@@ -580,14 +580,16 @@ function drawBoxes() {
 
   img = document.getElementById("main-img");
 
+  //   console.log(img);
+
   img_width = img.width;
   img_height = img.height;
 
   canvas.width = img_width;
-  canvas.height = img.height;
+  canvas.height = img_height;
 
   // draw image onto canvas
-  ctx.drawImage(img, img_width, img_height);
+  ctx.drawImage(img, 0, 0);
 
   //   console.log("here");
 
@@ -601,7 +603,7 @@ function drawBoxes() {
     let width = topR.x - topL.x;
     let height = botL.y - topL.y;
     ctx.beginPath();
-    ctx.lineWidth = "10";
+    ctx.lineWidth = "3";
     ctx.strokeStyle = "blue";
     ctx.rect(topL.x, topL.y, width, height);
     // ctx.fillStyle = "green";
