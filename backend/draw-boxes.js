@@ -571,36 +571,41 @@ let img;
 // };
 
 setTimeout(function() {
-  img = document.getElementById("main-img");
-  img_width = img.width;
-  img_height = img.height;
-
   drawBoxes();
-}, 2000);
+}, 5000);
 
 function drawBoxes() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
 
+  img = document.getElementById("main-img");
+
+  img_width = img.width;
+  img_height = img.height;
+
   canvas.width = img_width;
   canvas.height = img.height;
+
+  // draw image onto canvas
+  ctx.drawImage(img, img_width, img_height);
 
   //   console.log("here");
 
   // iterate through all blocks
-  //   for (let i = 0; i < blocks.length; i++) {
-  //     let topL = blocks[i].vertices[0];
-  //     let topR = blocks[i].vertices[1];
-  //     let botR = blocks[i].vertices[2];
-  //     let botL = blocks[i].vertices[3];
+  for (let i = 0; i < blocks.length; i++) {
+    let topL = blocks[i].vertices[0];
+    let topR = blocks[i].vertices[1];
+    let botR = blocks[i].vertices[2];
+    let botL = blocks[i].vertices[3];
 
-  //     let width = topR.x - topL.x;
-  //     let height = botL.y - topL.y;
-
-  //     ctx.rect(topL.x, topL.y, width, height);
-  //     // ctx.fillStyle = "green";
-  //     // ctx.fillRect(topL.x, topL.y, width, height);
-  //   }
-  // draw image onto canvas
-  ctx.drawImage(img, img_width, img_height);
+    let width = topR.x - topL.x;
+    let height = botL.y - topL.y;
+    ctx.beginPath();
+    ctx.lineWidth = "10";
+    ctx.strokeStyle = "blue";
+    ctx.rect(topL.x, topL.y, width, height);
+    // ctx.fillStyle = "green";
+    // ctx.fillRect(topL.x, topL.y, width, height);
+    ctx.stroke();
+  }
 }
